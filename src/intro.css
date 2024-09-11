@@ -1,0 +1,9 @@
+#home {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 1000px;
+    min-height: 100vh;
+    padding-top: 200px;
+}
