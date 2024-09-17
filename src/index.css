@@ -9,7 +9,7 @@ html{
 
 body {
   font-family: 'VarelaRound', sans-serif;
-  color: #0c8aca;
+  color: #92cfee;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -64,6 +64,18 @@ nav {
 
 .nav-links a:hover {
   color: rgb(218, 196, 196);
+}
+
+.social-links {
+  display: flex;
+  gap: 1em;
+  margin-left: auto;
+}
+
+.social-links a {
+  color: #0c8aca;
+  font-size: 1.5em;
+  text-decoration: none;
 }
 
 main {
