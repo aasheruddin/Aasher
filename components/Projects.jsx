@@ -1,7 +1,30 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styles from './Projects.module.css'; // We'll create this CSS module
 
 const Projects = () => {
+    const sectionRef = useRef(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current);
+        }
+
+        return () => {
+            if (sectionRef.current) {
+                observer.unobserve(sectionRef.current);
+            }
+        };
+    }, []);
+
     const projectList = [
         {
             title: "Project 1",
@@ -19,7 +42,7 @@ const Projects = () => {
     ];
 
     return (
-        <section id="projects" className={styles.projectsSection}>
+        <section id="projects" className={`${styles.projectsSection} fade`} ref={sectionRef}>
             <h2>// my projects</h2>
             <div className={styles.projectGrid}>
                 {projectList.map((project, index) => (
