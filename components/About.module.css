@@ -1,0 +1,14 @@
+.aboutSection {
+    padding: 3rem;
+    text-align: left;
+    margin: 0 auto;
+}
+
+.aboutContent h2 {
+    margin-top: 0;
+    color: #c2d2c0;
+}
+
+.aboutContent p {
+    color: #c2d2c0;
+}

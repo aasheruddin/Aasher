@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import styles from './About.module.css';
 
 const About = () => {
     const sectionRef = useRef(null);
@@ -25,9 +26,11 @@ const About = () => {
     }, []);
 
     return (
-        <section id="about" className="content fade" ref={sectionRef}>
-            <h2>About Me</h2>
-            <p>This is the about section.</p>
+        <section id="about" className={`${styles.aboutSection} fade`} ref={sectionRef}>
+            <div className={styles.aboutContent}>
+                <h2>// about me</h2>
+                <p>I am a 3rd year <b>Computer Information Systems</b> student at Mount Royal University. I have a passion for software development and web development.</p> 
+            </div>
         </section>
     );
 }
