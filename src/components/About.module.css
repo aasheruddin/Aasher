@@ -1,14 +1,85 @@
 .aboutSection {
-    padding: 3rem;
-    text-align: left;
-    margin: 0 auto;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 }
 
-.aboutContent h2 {
-    margin-top: 0;
-    color: #c2d2c0;
+.aboutSection h2 {
+
+  margin-bottom: 2rem;
+}
+
+/* Split container: side-by-side on desktop, stacks on mobile */
+.aboutSplitWrapper {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%  ;
+}
+
+.aboutContent {
+  flex: 1.2;
+  max-width: 650px;
+  padding-bottom: 0;
 }
 
 .aboutContent p {
-    color: #c2d2c0;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #e5e7eb;
+  margin-bottom: 1.5rem;
+}
+
+
+
+.aboutContent b {
+  color: #fff;
+}
+
+/* Silhouette Frame wrapper */
+.imageContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 700px;
+  position: relative;
+}
+
+/* The frame around your photo */
+.silhouetteImg {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  display: block;
+  
+  /* Applies a gradient mask: 100% solid at the top, fading to transparent at the very bottom */
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
+  
+  filter: drop-shadow(0 0 20px rgba(0, 207, 180, 0.2));
+  transition: all 0.4s ease-in-out;
+}
+
+
+
+/* Hover effect to subtly intensify the aura glow */
+.imageContainer:hover .silhouetteImg {
+  filter: drop-shadow(0 0 35px rgba(0, 207, 180, 0.45)) grayscale(0%);
+  transform: scale(1.02);
+}
+
+/* Mobile Responsive Overrides */
+@media (max-width: 768px) {
+  .aboutSplitWrapper {
+    flex-direction: column-reverse; /* Puts image above or below text cleanly on mobile */
+    gap: 2rem;
+  }
+  
+  .imageContainer {
+    max-width: 250px;
+    margin: 0 auto;
+  }
 }
