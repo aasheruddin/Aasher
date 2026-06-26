@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 export default function FadeInSection(props) {
   const [isVisible, setVisible] = React.useState(false);
@@ -24,3 +25,8 @@ export default function FadeInSection(props) {
     </div>
   );
 }
+
+FadeInSection.propTypes = {
+  delay: PropTypes.string,
+  children: PropTypes.node.isRequired
+};

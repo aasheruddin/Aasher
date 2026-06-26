@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import styles from './Projects.module.css'; // We'll create this CSS module
 
 const Projects = () => {
@@ -27,15 +27,15 @@ const Projects = () => {
 
     const projectList = [
         {
-            title: "Project 1",
-            description: "A brief description of Project 1.",
-            technologies: ["React", "Node.js", "MongoDB"],
-            link: "https://project1.example.com"
+            title: "Avenger Sorting",
+            description: "Used different data structures to sort a list of Avengers",
+            technologies: ["Java"],
+            link: "https://github.com/aasheruddin/Avenger-Sorting"
         },
         {
-            title: "Project 2",
-            description: "A brief description of Project 2.",
-            technologies: ["Vue.js", "Express", "PostgreSQL"],
+            title: "Stock Predictor",
+            description: "Predicts stock price based on history and trends",
+            technologies: ["Python"],
             link: "https://project2.example.com"
         },
         // Add more projects as needed
@@ -43,7 +43,7 @@ const Projects = () => {
 
     return (
         <section id="projects" className={`${styles.projectsSection} fade`} ref={sectionRef}>
-            <h2>// my projects</h2>
+            <h2>{"// my projects"}</h2>
             <div className={styles.projectGrid}>
                 {projectList.map((project, index) => (
                     <div key={index} className={styles.projectBox}>
